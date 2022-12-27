@@ -21,7 +21,7 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Run Benchmark
-      run: dotnet run --project ParseBenchmark -c Release -- --runtimes net7.0 --filter *ParseBenchmark*
+      run: dotnet run -c Release -- --runtimes net7.0 --filter *ParseBenchmark*
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.1
       with:
