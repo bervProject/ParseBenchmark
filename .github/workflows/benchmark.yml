@@ -20,3 +20,11 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
+    - name: Run Benchmark
+      run: dotnet run --project ParseBenchmark
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.1
+      with:
+        name: parse-benchmark-result
+        path: ./bin/*-report*.*
+        retention-days: 3
